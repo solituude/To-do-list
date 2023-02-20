@@ -1,4 +1,4 @@
-.top_bar{
+.top_bar {
   background-color: #894DC5;
   height: 60px;
   display: grid;
@@ -6,11 +6,10 @@
   padding: 0 24px;
   align-content: center;
   grid-template-columns: 196px calc(100% - 196px - 224px) 224px;
-  /*grid-template-columns: 214px calc(100% - 214px - 242px) 242px;*/
   grid-template-areas: "L E R";
 }
 
-.left_bar{
+.left_bar {
   display: flex;
   text-decoration: none;
   justify-content: start;
@@ -20,7 +19,7 @@
   gap: 18px;
 }
 
-.right_bar{
+.right_bar {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -28,7 +27,7 @@
   gap: 18px;
 }
 
-.img_help_icon{
+.img_help_icon {
   margin: 3px 0 0 0;
 }
 
@@ -39,4 +38,9 @@
 
 .empt{
   grid-area: E;
+}
+
+.btn_add_task{
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
 }
