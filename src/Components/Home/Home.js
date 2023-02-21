@@ -2,10 +2,14 @@ import React, {useState} from "react";
 import s from './home.module.css'
 import Task from "./Task/Task";
 import addTaskIcon from '../Header/img/addTask.svg';
-import AddTaskHeader from "../AddTaskHeader/AddTaskHeader";
+import AddTaskHeader from "../AddTask/AddTask";
 
-const Home = () => {
+const Home = (props) => {
     const [show, setShow] = useState(false);
+
+
+    let taskElements = props.taskData.map(t => <Task textTask={t.task}/>);
+
     return (
         <div className={s.content}>
             <div className={s.date}>
@@ -15,16 +19,15 @@ const Home = () => {
             </div>
 
             <div className={s.container_task}>
-                <Task textTask='kfdlklfkl'/>
-                <Task textTask='fldkfslfksdfjosijfojfojjfijwef kndmnsdjd fds'/>
+                {taskElements}
             </div>
 
             <div>
-                <button onClick={ () => setShow(true)}
+                <button onClick={() => setShow(true)}
                         className={s.btn_add_task}>
                     <img src={addTaskIcon} alt='Add task' className={s.img_add_task}/>
                 </button>
-                <AddTaskHeader onClose={() => setShow(false)} show={show} />
+                <AddTaskHeader onClose={() => setShow(false)} show={show}/>
             </div>
         </div>
     );

@@ -4,10 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let taskData = [
+    {task: "doing a homework"},
+    {task: "walk in the park"},
+    {task: "buy food"},
+    {task: "do research in the physics"}
+];
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App taskData={taskData}/>
   </React.StrictMode>
 );
 

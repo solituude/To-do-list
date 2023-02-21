@@ -7,7 +7,7 @@ import homeIcon from './img/home.svg';
 import addTaskIcon from './img/addTask.svg';
 import helpIcon from './img/help.svg';
 import zaglushkaProfileIcon from './img/zaglushkaAvaProfile.svg';
-import AddTaskHeader from "../AddTaskHeader/AddTaskHeader";
+import AddTaskHeader from "../AddTask/AddTask";
 
 const Header = () => {
     const [show, setShow] = useState(false);

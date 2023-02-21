@@ -1,7 +1,7 @@
 import React from "react";
-import s from "./addTaskHeader.module.css";
+import s from "./addTask.module.css";
 
-const addTaskHeader = (props) => {
+const addTask = (props) => {
     if (!props.show) {
         return null;
     }
@@ -26,4 +26,4 @@ const addTaskHeader = (props) => {
     );
 }
 
-export default addTaskHeader;
+export default addTask;
