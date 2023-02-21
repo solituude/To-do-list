@@ -13,6 +13,7 @@ const Header = () => {
     const [show, setShow] = useState(false);
     return (
         <div className={s.top_bar}>
+
             <div className={s.left_bar}>
                 <NavLink to='/menu'>
                     <img src={menuIcon} alt='Menu'/>
@@ -22,6 +23,7 @@ const Header = () => {
                     <img src={homeIcon} alt='Home'/>
                 </NavLink>
             </div>
+
             <div className={s.right_bar}>
                 <div>
                     <button onClick={() => setShow(true)} className={s.btn_add_task}>

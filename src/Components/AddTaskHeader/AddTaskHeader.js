@@ -1,13 +1,13 @@
 import React from "react";
 import s from "./addTaskHeader.module.css";
+
 const addTaskHeader = (props) => {
-    if (!props.show){
+    if (!props.show) {
         return null;
     }
     return (
-        <div className={s.modal}>
-            <div className={s.modalContent}>
-
+        <div className={s.modal} onClick={props.onClose}>
+            <div className={s.modalContent} onClick={e => e.stopPropagation()}>
                 <div className={s.modalHeader}>
                     header
                 </div>

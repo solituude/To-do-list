@@ -10,7 +10,7 @@ const Task = (props) => {
             <button className={s.scroll}></button>
             <button className={s.done}></button>
 
-            <div className={s.text}>{props.info}</div>
+            <div className={s.text}>{props.textTask}</div>
 
             <button className={s.edit}><img src={editIcon} alt='edit'/></button>
 
