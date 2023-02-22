@@ -3,6 +3,7 @@ import Header from "./Components/Header/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Help from "./Components/Help/Help";
+import {addTask} from "./redux/state";
 
 const App = (props) => {
 
@@ -11,8 +12,8 @@ const App = (props) => {
             <BrowserRouter>
                 <Header/>
                 <Routes>
-                    <Route path='/' element={<Home taskData={props.state.homePage.taskData}/>}/>
-                    <Route path='/home' element={<Home taskData={props.state.homePage.taskData}/>}/>
+                    <Route path='/' element={<Home taskData={props.state.homePage.taskData} addTask={addTask}/>}/>
+                    <Route path='/home' element={<Home taskData={props.state.homePage.taskData} addTask={addTask}/>}/>
                     <Route path='/help' element={<Help/>}/>
                 </Routes>
             </BrowserRouter>

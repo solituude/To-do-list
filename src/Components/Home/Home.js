@@ -8,12 +8,24 @@ const Home = (props) => {
     const [show, setShow] = useState(false);
     let taskElements = props.taskData.map(t => <Task textTask={t.task}/>);
 
+    let newTaskElement = React.createRef();
+
+    let addTask = () => {
+        let text = newTaskElement.current.value;
+        props.addTask(text)
+    }
+
     return (
         <div className={s.content}>
             <div className={s.date}>
                 <div className={s.today}>Today</div>
                 <div className={s.week}>WEN</div>
                 <div className={s.month}>1 Feb</div>
+            </div>
+
+            <div>
+                <textarea ref={newTaskElement}></textarea>
+                <button onClick={ addTask }>Add task</button>
             </div>
 
             <div className={s.container_task}>

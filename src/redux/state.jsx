@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     homePage: {
         taskData: [
@@ -7,7 +9,15 @@ let state = {
             {task: "do research in the physics"}
         ]
     }
+}
 
+export let addTask = (textTask) => {
+    let newTask = {
+        task: textTask
+    };
+
+    state.homePage.taskData.push(newTask);
+    rerenderEntireTree(state);
 }
 
 export default state;
