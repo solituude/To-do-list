@@ -6,8 +6,6 @@ import AddTaskHeader from "../AddTask/AddTask";
 
 const Home = (props) => {
     const [show, setShow] = useState(false);
-
-
     let taskElements = props.taskData.map(t => <Task textTask={t.task}/>);
 
     return (

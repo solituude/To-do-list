@@ -11,10 +11,9 @@ const App = (props) => {
             <BrowserRouter>
                 <Header/>
                 <Routes>
-                    <Route path='/' element={<Home taskData={props.taskData}/>}/>
-                    <Route path='/home' element={<Home taskData={props.taskData}/>}/>
+                    <Route path='/' element={<Home taskData={props.state.homePage.taskData}/>}/>
+                    <Route path='/home' element={<Home taskData={props.state.homePage.taskData}/>}/>
                     <Route path='/help' element={<Help/>}/>
-
                 </Routes>
             </BrowserRouter>
         </div>

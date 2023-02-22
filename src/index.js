@@ -3,19 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-let taskData = [
-    {task: "doing a homework"},
-    {task: "walk in the park"},
-    {task: "buy food"},
-    {task: "do research in the physics"}
-];
-
+import state from "./redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App taskData={taskData}/>
+    <App state={state}/>
   </React.StrictMode>
 );
 
