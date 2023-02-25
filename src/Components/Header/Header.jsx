@@ -24,9 +24,7 @@ const Header = (props) => {
                     <MainMenu onClose={() => setShowMainMenu(false)} show={showMainMenu}/>
                 </div>
 
-                <NavLink to='/home'>
-                    <img src={homeIcon} alt='Home'/>
-                </NavLink>
+                <NavLink to='/home'> <img src={homeIcon} alt='Home'/> </NavLink>
             </div>
 
             <div className={s.right_bar}>

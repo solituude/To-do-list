@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./addTask.module.css";
+import {NavLink} from "react-router-dom";
 
 
 const addTask = (props) => {
@@ -13,12 +14,10 @@ const addTask = (props) => {
         let text = newText.current.value;
         props.updateNewTaskText(text);
     }
-
     let addTaskWindow = () => {
         props.addTaskState();
         props.onClose();
     }
-
 
     return (
         <div className={s.modal} onClick={props.onClose}>
@@ -28,13 +27,13 @@ const addTask = (props) => {
                 </div>
 
                 <textarea ref={newText} onChange={onChangeTask}/>
-                <button onClick={addTaskWindow}>Add task</button>
-
+                <NavLink to='/home'>
+                    <button onClick={addTaskWindow}>Add task</button>
+                </NavLink>
 
                 <div className={s.modalFooter}>
                     Good job!
                 </div>
-
             </div>
         </div>
     );

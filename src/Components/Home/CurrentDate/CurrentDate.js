@@ -9,7 +9,7 @@ const CurrentDate = () => {
     let month = now.getMonth();
     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     let weeks = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-    let message = '';
+    let message;
 
     if (hour <= 6) {
         message = 'Good night';
