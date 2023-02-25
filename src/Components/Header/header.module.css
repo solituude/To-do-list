@@ -40,7 +40,7 @@
   grid-area: E;
 }
 
-.btn_add_task{
+.btn_no_decoration{
   background-color: rgba(0, 0, 0, 0);
   border: 0;
 }

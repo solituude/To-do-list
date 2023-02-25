@@ -1,0 +1,33 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin-left: 4px;
+    margin-top: 60px;
+    justify-content: left;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.content {
+    width: 360px;
+    height: 420px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 7px 11px -14px #000000;
+}
+
+.par {
+    width: 340px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #f8ecff;
+    box-shadow: 0 7px 11px -14px #000000;
+    margin: 15px auto;
+}
+
+.par:hover {
+    background-color: #f4e0f8;
+}

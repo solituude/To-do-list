@@ -8,16 +8,21 @@ import addTaskIcon from './img/addTask.svg';
 import helpIcon from './img/help.svg';
 import zaglushkaProfileIcon from './img/zaglushkaAvaProfile.svg';
 import AddTaskHeader from "../AddTask/AddTask";
+import MainMenu from "../MainMenu/MainMenu";
 
 const Header = () => {
-    const [show, setShow] = useState(false);
+    const [showAddTask, setShowAddTask] = useState(false);
+    const [showMainMenu, setShowMainMenu] = useState(false);
+
+
     return (
         <div className={s.top_bar}>
 
             <div className={s.left_bar}>
-                <NavLink to='/menu'>
-                    <img src={menuIcon} alt='Menu'/>
-                </NavLink>
+                <div>
+                    <img src={menuIcon} alt='Menu' onClick={() => setShowMainMenu(true)}/>
+                    <MainMenu onClose={() => setShowMainMenu(false)} show={showMainMenu}/>
+                </div>
 
                 <NavLink to='/home'>
                     <img src={homeIcon} alt='Home'/>
@@ -26,15 +31,14 @@ const Header = () => {
 
             <div className={s.right_bar}>
                 <div>
-                    <button onClick={() => setShow(true)} className={s.btn_add_task}>
-                        <img src={addTaskIcon} alt='Add task'/>
-                    </button>
-
-                    <AddTaskHeader onClose={() => setShow(false)} show={show}/>
+                    <img src={addTaskIcon} alt='Add task' onClick={() => setShowAddTask(true)}/>
+                    <AddTaskHeader onClose={() => setShowAddTask(false)} show={showAddTask}/>
                 </div>
+
                 <NavLink to='/help'>
                     <img src={helpIcon} alt='Help' className={s.img_help_icon}/>
                 </NavLink>
+
                 <img src={zaglushkaProfileIcon} alt='Profile'/>
             </div>
 
