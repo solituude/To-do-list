@@ -2,17 +2,23 @@ import React, {useState} from "react";
 import s from './home.module.css'
 import Task from "./Task/Task";
 import addTaskIcon from '../Header/img/addTask.svg';
-import AddTaskHeader from "../AddTask/AddTask";
+
+import AddTask from "../AddTask/AddTask";
 
 const Home = (props) => {
     const [show, setShow] = useState(false);
-    let taskElements = props.taskData.map(t => <Task textTask={t.task}/>);
+
+    let taskElements = props.homePage.taskData.map(t => <Task textTask={t.task}/>);
 
     let newTaskElement = React.createRef();
 
-    let addTask = () => {
+    let addTaskHome = () => {
+        props.addTaskState();
+    }
+
+    let onChangeTask = () => {
         let text = newTaskElement.current.value;
-        props.addTask(text)
+        props.updateNewTaskText(text);
     }
 
     return (
@@ -23,22 +29,27 @@ const Home = (props) => {
                 <div className={s.month}>1 Feb</div>
             </div>
 
+
             <div>
-                <textarea ref={newTaskElement}></textarea>
-                <button onClick={ addTask }>Add task</button>
+                <textarea onChange={onChangeTask} ref={newTaskElement} value={props.homePage.newTaskText}/>
+                <button onClick={addTaskHome}>Add task</button>
             </div>
+
 
             <div className={s.container_task}>
                 {taskElements}
             </div>
+
 
             <div>
                 <button onClick={() => setShow(true)}
                         className={s.btn_add_task}>
                     <img src={addTaskIcon} alt='Add task' className={s.img_add_task}/>
                 </button>
-                <AddTaskHeader onClose={() => setShow(false)} show={show}/>
+                <AddTask onClose={() => setShow(false)} show={show}/>
             </div>
+
+
         </div>
     );
 }
