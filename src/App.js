@@ -3,13 +3,15 @@ import Header from "./Components/Header/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Help from "./Components/Help/Help";
+import Week from "./Components/Week/Week";
+import Month from "./Components/Month/Month";
 
 const App = (props) => {
-
     return (
         <div className='content'>
             <BrowserRouter>
-                <Header/>
+                <Header updateNewTaskText={props.updateNewTaskText}
+                        addTaskState={props.addTaskState}/>
                 <Routes>
                     <Route path='/' element={<Home homePage={props.state.homePage}
                                                    updateNewTaskText={props.updateNewTaskText}
@@ -19,7 +21,10 @@ const App = (props) => {
                                                        updateNewTaskText={props.updateNewTaskText}
                                                        addTaskState={props.addTaskState}/>}/>
 
+                    <Route path='/currentWeek' element={<Week/>}/>
+                    <Route path='/currentMonth' element={<Month/>}/>
                     <Route path='/help' element={<Help/>}/>
+
                 </Routes>
             </BrowserRouter>
         </div>

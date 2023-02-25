@@ -1,0 +1,40 @@
+.date{
+    width: 740px;
+    height: 76px;
+    display: flex;
+    align-items: start;
+    margin: auto 0 18px;
+}
+
+.today{
+    font-size: 36px;
+    font-family: "Roboto Thin", serif;
+    color: #341f7f;
+    margin: auto 0;
+
+}
+
+.week{
+    font-size: 40px;
+    color: #B9B9B9;
+    font-weight: bolder;
+    font-family: 'Roboto', serif;
+    margin: auto 10px;
+}
+
+.month{
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    margin: auto 10px;
+}
+
+.message{
+    width: 740px;
+
+    font-size: 40px;
+    color: #B9B9B9;
+    font-weight: bolder;
+    font-family: 'Roboto', serif;
+    margin-top: 40px;
+}

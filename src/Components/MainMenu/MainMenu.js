@@ -13,13 +13,14 @@ const MainMenu = (props) => {
                     <div className={s.par}> day</div>
                 </NavLink>
 
-                <div className={s.par}>
-                    week
-                </div>
+                <NavLink to='/currentWeek' onClick={props.onClose}>
+                    <div className={s.par}> week </div>
+                </NavLink>
 
-                <div className={s.par}>
-                    month
-                </div>
+                <NavLink to='/currentMonth' onClick={props.onClose}>
+                    <div className={s.par}> month </div>
+                </NavLink>
+
             </div>
         </div>
     )
