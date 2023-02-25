@@ -18,6 +18,7 @@ const App = (props) => {
                     <Route path='/home' element={<Home homePage={props.state.homePage}
                                                        updateNewTaskText={props.updateNewTaskText}
                                                        addTaskState={props.addTaskState}/>}/>
+
                     <Route path='/help' element={<Help/>}/>
                 </Routes>
             </BrowserRouter>
