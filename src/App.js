@@ -10,16 +10,13 @@ const App = (props) => {
     return (
         <div className='content'>
             <BrowserRouter>
-                <Header updateNewTaskText={props.updateNewTaskText}
-                        addTaskState={props.addTaskState}/>
+                <Header dispatch={props.dispatch}/>
                 <Routes>
                     <Route path='/' element={<Home homePage={props.state.homePage}
-                                                   updateNewTaskText={props.updateNewTaskText}
-                                                   addTaskState={props.addTaskState}/>}/>
+                                                   dispatch={props.dispatch}/>}/>
 
                     <Route path='/home' element={<Home homePage={props.state.homePage}
-                                                       updateNewTaskText={props.updateNewTaskText}
-                                                       addTaskState={props.addTaskState}/>}/>
+                                                       dispatch={props.dispatch}/>}/>
 
                     <Route path='/currentWeek' element={<Week/>}/>
                     <Route path='/currentMonth' element={<Month/>}/>

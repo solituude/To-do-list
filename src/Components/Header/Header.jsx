@@ -30,8 +30,7 @@ const Header = (props) => {
             <div className={s.right_bar}>
                 <div>
                     <img src={addTaskIcon} alt='Add task' onClick={() => setShowAddTask(true)}/>
-                    <AddTask addTaskState={props.addTaskState}
-                             updateNewTaskText={props.updateNewTaskText}
+                    <AddTask dispatch={props.dispatch}
                              onClose={() => setShowAddTask(false)} show={showAddTask}/>
                 </div>
 

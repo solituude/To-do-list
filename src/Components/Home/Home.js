@@ -20,8 +20,7 @@ const Home = (props) => {
                         className={s.btn_add_task}>
                     <img src={addTaskIcon} alt='Add task' className={s.img_add_task}/>
                 </button>
-                <AddTask addTaskState={props.addTaskState}
-                         updateNewTaskText={props.updateNewTaskText}
+                <AddTask dispatch={props.dispatch}
                          onClose={() => setShow(false)} show={show}/>
             </div>
         </div>

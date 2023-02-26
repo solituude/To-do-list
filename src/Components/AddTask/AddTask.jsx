@@ -1,21 +1,21 @@
 import React from "react";
 import s from "./addTask.module.css";
 import {NavLink} from "react-router-dom";
+import {addTaskStateActionCreator, updateNewTaskTextActionCreator} from "../../redux/state";
 
 
 const addTask = (props) => {
     if (!props.show) {
         return null;
     }
-
     let newText = React.createRef();
 
     let onChangeTask = () => {
         let text = newText.current.value;
-        props.updateNewTaskText(text);
+        props.dispatch(updateNewTaskTextActionCreator(text));
     }
     let addTaskWindow = () => {
-        props.addTaskState();
+        props.dispatch(addTaskStateActionCreator())
         props.onClose();
     }
 

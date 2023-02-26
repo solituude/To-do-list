@@ -1,3 +1,6 @@
+const ADD_TASK_STATE = 'ADD-TASK-STATE';
+const UPDATE_NEW_TASK_TEXT = 'UPDATE-NEW-TASK-TEXT';
+
 let store = {
     _state: {
         homePage: {
@@ -14,14 +17,14 @@ let store = {
         return this._state;
     },
 
-    _callSubscriber() { // присваиваем чему-то чтобы потом переприсвоить)))0)000
+    _callSubscriber() { // присваиваем чему-то чтобы потом переприсвоить (оно равно observer т.е. ререндер страницы)
     },
 
     subscribe(observer) {  // переприсваиваем чтобы использовать исходную функцию дальше
         this._callSubscriber = observer;
     },
 
-    addTaskState () {
+    _addTaskState () {
         let newTask = {
             task: this._state.homePage.newTaskText
         };
@@ -30,10 +33,26 @@ let store = {
         this._callSubscriber(this._state);
     },
 
-    updateNewTaskText(newText) {
+    _updateNewTaskText(newText) {
         this._state.homePage.newTaskText = newText;
         this._callSubscriber(this._state);
+    },
+
+    dispatch(action){
+        if (action.type === ADD_TASK_STATE){
+            this._addTaskState();
+        } else if (action.type === UPDATE_NEW_TASK_TEXT){
+            this._updateNewTaskText(action.text);
+        }
     }
+}
+
+export const addTaskStateActionCreator = () => {
+    return {type: ADD_TASK_STATE};
+}
+
+export const updateNewTaskTextActionCreator = (text) => {
+    return {type: UPDATE_NEW_TASK_TEXT, text: text};
 }
 
 export default store;
