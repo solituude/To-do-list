@@ -1,3 +1,7 @@
+import homeReducer from "./homeReducer";
+import currentWeekReducer from "./currentWeekReducer";
+import currentMonthReducer from "./currentMonthReducer";
+
 const ADD_TASK_STATE = 'ADD-TASK-STATE';
 const UPDATE_NEW_TASK_TEXT = 'UPDATE-NEW-TASK-TEXT';
 
@@ -10,40 +14,35 @@ let store = {
                 {task: "do research in the physics"}
             ],
             newTaskText: "meow ^._.^"
-        }
+        },
+        currentWeek: {
+            mondayData : [{task: ""}],
+            tuesdayData: [{task: ""}],
+            wednesdayData: [{task: ""}],
+            thursdayData: [{task: ""}],
+            fridayData: [{task: ""}],
+            saturdayData: [{task: ""}],
+            sundayData: [{task: ""}]
+        },
+        currentMonth: {}
     },
 
     getState() {
         return this._state;
     },
 
-    _callSubscriber() { // присваиваем чему-то чтобы потом переприсвоить (оно равно observer т.е. ререндер страницы)
+    _callSubscriber() {
     },
 
-    subscribe(observer) {  // переприсваиваем чтобы использовать исходную функцию дальше
+    subscribe(observer) {
         this._callSubscriber = observer;
     },
 
-    _addTaskState () {
-        let newTask = {
-            task: this._state.homePage.newTaskText
-        };
-        this._state.homePage.taskData.push(newTask);
-        this._state.homePage.newTaskText = '';
-        this._callSubscriber(this._state);
-    },
-
-    _updateNewTaskText(newText) {
-        this._state.homePage.newTaskText = newText;
-        this._callSubscriber(this._state);
-    },
-
     dispatch(action){
-        if (action.type === ADD_TASK_STATE){
-            this._addTaskState();
-        } else if (action.type === UPDATE_NEW_TASK_TEXT){
-            this._updateNewTaskText(action.text);
-        }
+        this._state.homePage = homeReducer(this._state.homePage, action);
+        this._state.currentWeek = currentWeekReducer(this._state.currentWeek, action);
+        this._state.currentMonth = currentMonthReducer(this._state.currentMonth, action);
+        this._callSubscriber(this._state);
     }
 }
 
