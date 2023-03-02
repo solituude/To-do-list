@@ -1,8 +1,17 @@
 const ADD_TASK_STATE = 'ADD-TASK-STATE';
 const UPDATE_NEW_TASK_TEXT = 'UPDATE-NEW-TASK-TEXT';
 
-const homeReducer = (state, action) => {
-    switch (action.type){
+let initialState = {
+    taskData: [
+        {task: "doing a homework"},
+        {task: "buy food"},
+        {task: "do research in the physics"}
+    ],
+    newTaskText: ""
+}
+
+const homeReducer = (state = initialState, action) => {
+    switch (action.type) {
         case ADD_TASK_STATE:
             let newTask = {
                 task: state.newTaskText
@@ -13,8 +22,17 @@ const homeReducer = (state, action) => {
         case UPDATE_NEW_TASK_TEXT:
             state.newTaskText = action.text;
             return state;
-        default: return state;
+        default:
+            return state;
     }
+}
+
+export const addTaskStateActionCreator = () => {
+    return {type: ADD_TASK_STATE};
+}
+
+export const updateNewTaskTextActionCreator = (text) => {
+    return {type: UPDATE_NEW_TASK_TEXT, text: text};
 }
 
 export default homeReducer;

@@ -1,4 +1,5 @@
-const currentMonthReducer = (state, action) => {
+let initialState = {};
+const currentMonthReducer = (state = initialState, action) => {
     return state;
 }
 

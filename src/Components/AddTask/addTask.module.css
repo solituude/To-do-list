@@ -8,10 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Roboto', serif;
 }
 
 .modalContent {
-    width: 500px;
+    width: 760px;
     border-radius: 10px;
     background-color: white;
 }
@@ -28,4 +29,33 @@
 
 .modalFooter {
     padding: 16px;
+}
+
+.containerTextarea {
+    position: relative;
+    width: 680px;
+    height: 148px;
+}
+
+.textarea {
+    position: absolute;
+    resize: none;
+    outline: none;
+    margin: 0 16px;
+    border: 0;
+    background-color: #ededed;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'Roboto', serif;
+
+}
+
+.btnAddTask {
+    position: relative;
+    font-family: 'Roboto', serif;
+    width: 100px;
+    height: 32px;
+
+    margin-left: 620px;
+
 }

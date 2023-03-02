@@ -1,7 +1,8 @@
 import React from "react";
 import s from "./addTask.module.css";
 import {NavLink} from "react-router-dom";
-import {addTaskStateActionCreator, updateNewTaskTextActionCreator} from "../../redux/state";
+import {addTaskStateActionCreator, updateNewTaskTextActionCreator} from "../../redux/homeReducer";
+
 
 
 const addTask = (props) => {
@@ -13,6 +14,7 @@ const addTask = (props) => {
     let onChangeTask = () => {
         let text = newText.current.value;
         props.dispatch(updateNewTaskTextActionCreator(text));
+
     }
     let addTaskWindow = () => {
         props.dispatch(addTaskStateActionCreator())
@@ -23,20 +25,27 @@ const addTask = (props) => {
         <div className={s.modal} onClick={props.onClose}>
             <div className={s.modalContent} onClick={e => e.stopPropagation()}>
                 <div className={s.modalHeader}>
-                    Add your new task here:
+                    Your new task
                 </div>
 
-                <textarea ref={newText} onChange={onChangeTask}/>
+                <div className={s.containerTextarea}>
+                   <textarea ref={newText} onChange={onChangeTask} className={s.textarea}
+                             rows="8" cols="60" placeholder="Text your new task here" autoFocus/>
+                </div>
+
+
                 <NavLink to='/home'>
-                    <button onClick={addTaskWindow}>Add task</button>
+                    <button onClick={addTaskWindow} className={s.btnAddTask}>Add task</button>
                 </NavLink>
 
                 <div className={s.modalFooter}>
-                    Good job!
+
                 </div>
             </div>
         </div>
     );
 }
+
+
 
 export default addTask;
