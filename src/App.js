@@ -12,16 +12,15 @@ const App = (props) => {
             <BrowserRouter>
                 <Header dispatch={props.dispatch}/>
                 <Routes>
-                    <Route path='/' element={<Home homePage={props.state.homePage}
-                                                   dispatch={props.dispatch}/>}/>
+                    {/*<Route path='/' element={<Home homePage={props.state.homePage}*/}
+                    {/*                               dispatch={props.dispatch}/>}/>*/}
+                    <Route path='/' element={<Home store={props.store}/>}/>
 
-                    <Route path='/home' element={<Home homePage={props.state.homePage}
-                                                       dispatch={props.dispatch}/>}/>
+                    <Route path='/home' element={<Home store={props.store}/>}/>
 
                     <Route path='/currentWeek' element={<Week/>}/>
                     <Route path='/currentMonth' element={<Month/>}/>
                     <Route path='/help' element={<Help/>}/>
-
                 </Routes>
             </BrowserRouter>
         </div>

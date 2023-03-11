@@ -8,7 +8,8 @@ import addTaskIcon from './img/addTask.svg';
 import helpIcon from './img/help.svg';
 import zaglushkaProfileIcon from './img/zaglushkaAvaProfile.svg';
 import MainMenu from "../MainMenu/MainMenu";
-import AddTask from "../AddTask/AddTask";
+
+import AddTaskContainer from "../AddTask/AddTaskContainer";
 
 const Header = (props) => {
     const [showAddTask, setShowAddTask] = useState(false);
@@ -30,7 +31,7 @@ const Header = (props) => {
             <div className={s.right_bar}>
                 <div>
                     <img src={addTaskIcon} alt='Add task' onClick={() => setShowAddTask(true)}/>
-                    <AddTask dispatch={props.dispatch}
+                    <AddTaskContainer dispatch={props.dispatch}
                              onClose={() => setShowAddTask(false)} show={showAddTask}/>
                 </div>
 

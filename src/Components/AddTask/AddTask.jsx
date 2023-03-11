@@ -1,24 +1,22 @@
 import React from "react";
 import s from "./addTask.module.css";
 import {NavLink} from "react-router-dom";
-import {addTaskStateActionCreator, updateNewTaskTextActionCreator} from "../../redux/homeReducer";
-
-
 
 const addTask = (props) => {
     if (!props.show) {
         return null;
     }
+
     let newText = React.createRef();
+
+    let addTask = () => {
+        props.addTaskWindow();
+        props.onClose();
+    }
 
     let onChangeTask = () => {
         let text = newText.current.value;
-        props.dispatch(updateNewTaskTextActionCreator(text));
-
-    }
-    let addTaskWindow = () => {
-        props.dispatch(addTaskStateActionCreator())
-        props.onClose();
+        props.updateNewTaskText(text);
     }
 
     return (
@@ -35,7 +33,7 @@ const addTask = (props) => {
 
 
                 <NavLink to='/home'>
-                    <button onClick={addTaskWindow} className={s.btnAddTask}>Add task</button>
+                    <button onClick={addTask} className={s.btnAddTask}>Add task</button>
                 </NavLink>
 
                 <div className={s.modalFooter}>
