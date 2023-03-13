@@ -10,7 +10,7 @@ const App = (props) => {
     return (
         <div className='content'>
             <BrowserRouter>
-                <Header dispatch={props.dispatch}/>
+                <Header store={props.store}/>
                 <Routes>
                     {/*<Route path='/' element={<Home homePage={props.state.homePage}*/}
                     {/*                               dispatch={props.dispatch}/>}/>*/}

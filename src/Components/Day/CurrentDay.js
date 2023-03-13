@@ -5,7 +5,11 @@ import addTaskIcon from "../Header/img/addTask.svg";
 import Task from "../Home/Task/Task";
 
 const CurrentDay = (props) => {
-    let taskElements = props.tasks.map(t => <Task textTask={t.task}/>);
+    let deleteTaskTemp = (i) => {
+        props.deleteTask(i);
+    }
+
+    let taskElements = props.tasks.map((t, index) => <Task index={index} deleteTask={deleteTaskTemp} textTask={t.task}/>);
     return (
         <div>
             <div className={s.container_task}> {taskElements} </div>
@@ -15,7 +19,6 @@ const CurrentDay = (props) => {
                     <img src={addTaskIcon} alt='Add task' className={s.img_add_task}/>
                 </button>
             </div>
-
         </div>
     )
 }

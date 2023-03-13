@@ -4,7 +4,7 @@ import s from './help.module.css'
 const Help = () => {
     return (
         <div className={s.content}>
-            cебе помоги
+            бог поможет
         </div>
     );
 }

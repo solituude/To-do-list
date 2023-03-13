@@ -31,7 +31,6 @@ const addTask = (props) => {
                              rows="8" cols="60" placeholder="Text your new task here" autoFocus/>
                 </div>
 
-
                 <NavLink to='/home'>
                     <button onClick={addTask} className={s.btnAddTask}>Add task</button>
                 </NavLink>

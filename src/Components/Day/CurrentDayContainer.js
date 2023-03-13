@@ -2,15 +2,25 @@
 import React, {useState} from "react";
 import AddTaskContainer from "../AddTask/AddTaskContainer";
 import CurrentDay from "./CurrentDay";
+import {deleteTaskActionCreator} from "../../redux/homeReducer";
 // сюда передается store
 const CurrentDayContainer = (props) => {
     const [show, setShow] = useState(false);
 
+    let deleteCurrTask = (index) => {
+        props.store.dispatch(deleteTaskActionCreator(index));
+    }
+
     return (
         <div>
-            <CurrentDay show={show} setShow={setShow} tasks={props.store.getState().homePage.taskData}/>
+            <CurrentDay show={show}
+                        setShow={setShow}
+                        deleteTask={deleteCurrTask}
+                        tasks={props.store.getState().homePage.taskData}/>
+
             <AddTaskContainer store={props.store}
-                              onClose={() => setShow(false)} show={show}/>
+                              onClose={() => setShow(false)}
+                              show={show}/>
         </div>
     )
 }

@@ -31,8 +31,9 @@ const Header = (props) => {
             <div className={s.right_bar}>
                 <div>
                     <img src={addTaskIcon} alt='Add task' onClick={() => setShowAddTask(true)}/>
-                    <AddTaskContainer dispatch={props.dispatch}
-                             onClose={() => setShowAddTask(false)} show={showAddTask}/>
+                    <AddTaskContainer store={props.store}
+                                      onClose={() => setShowAddTask(false)}
+                                      show={showAddTask}/>
                 </div>
 
                 <NavLink to='/help'>

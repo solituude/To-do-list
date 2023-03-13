@@ -19,12 +19,15 @@
 }
 
 .done{
-    width: 36px;
-    height: 36px;
-    border-radius: 20px;
-    border: 2px solid #942BD4;
+    width: 32px;
+    height: 32px;
+    border-radius: 18px;
+    border: 2px solid #532c6d;
     background-color: white;
     margin: auto 8px;
+}
+.done:active{
+    background-color: #906da4;
 }
 
 .text{
